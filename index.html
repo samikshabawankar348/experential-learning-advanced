@@ -351,6 +351,61 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
   </div>
 </section>
+<section class="section">
+  <h2>💻 Live Code Playground (Online IDE)</h2>
+  <p>Write HTML, CSS, JS and see live output</p>
+
+  <div class="container">
+
+    <div class="row g-3">
+
+      <!-- HTML -->
+      <div class="col-md-4">
+        <h5>HTML</h5>
+        <textarea id="htmlCode" class="form-control" style="height:150px;">
+<h1>Hello Code Master 🚀</h1>
+        </textarea>
+      </div>
+
+      <!-- CSS -->
+      <div class="col-md-4">
+        <h5>CSS</h5>
+        <textarea id="cssCode" class="form-control" style="height:150px;">
+h1 {
+  color: blue;
+  text-align: center;
+}
+        </textarea>
+      </div>
+
+      <!-- JS -->
+      <div class="col-md-4">
+        <h5>JavaScript</h5>
+        <textarea id="jsCode" class="form-control" style="height:150px;">
+console.log("Welcome to Code Master Academy");
+        </textarea>
+      </div>
+
+    </div>
+
+    <button class="btn btn-primary mt-3" onclick="runCode()">▶ Run Code</button>
+
+    <h5 class="mt-4">Output</h5>
+    <iframe id="output" style="width:100%; height:300px; border:1px solid #ccc; border-radius:10px;"></iframe>
+
+  </div>
+</section>
+<script>
+function runCode() {
+  let html = document.getElementById("htmlCode").value;
+  let css = "<style>" + document.getElementById("cssCode").value + "</style>";
+  let js = "<script>" + document.getElementById("jsCode").value + "<\/script>";
+
+  let output = document.getElementById("output");
+
+  output.srcdoc = html + css + js;
+}
+</script>
 
 </body>
 </html>
